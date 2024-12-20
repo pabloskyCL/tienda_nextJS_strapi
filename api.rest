@@ -1,0 +1,2 @@
+GET http://localhost:1337/api/products?populate[product_category][fields][0]=name&pagination[page]=1&pagination[pageSize]=3&populate=images
+Authorization: Bearer 49c335dfe58b4bffff4e7a8c737b293c154484db307373fcf8a41e2d8c09a7c9140163ce824b43f9a94b237d16740494efd474428e3518254f890f1bd6ea020cfa9eeca7350e27362ba46fce49ad882d5d2843098bc7460ddebc1929325c961c4dd19b97e58bcc148d9327b900bfb61f49e9a45218792cb0daa0ee19deef4bef
