@@ -1,7 +1,8 @@
-interface ProductCardProps {
+interface ProductType {
+  id: number;
   image: string;
   name: string;
-  price: string;
+  price: number;
   category: string;
 }
 
