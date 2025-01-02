@@ -1,6 +1,14 @@
+"use client"
 import { Menu, Search, User, ShoppingCart } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { useCart } from "@/hooks/use-cart"
+import Link from "next/link";
 
 export function Navbar() {
+
+    const { items } = useCart();
+    const router = useRouter();
+
     return (
         <nav className="bg-white shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,7 +19,7 @@ export function Navbar() {
                     </div>
 
                     <div className="hidden sm:flex space-x-8">
-                        <a href="#" className="text-gray-600 hover:text-gray-900">Inicio</a>
+                        <Link href="/" className="text-gray-600 hover:text-gray-900">Inicio</Link>
                         <a href="#" className="text-gray-600 hover:text-gray-900">Audifonos</a>
                         <a href="#" className="text-gray-600 hover:text-gray-900">Categorias</a>
                         <a href="#" className="text-gray-600 hover:text-gray-900">Nosotros</a>
@@ -21,8 +29,8 @@ export function Navbar() {
                         <Search className="h-5 w-5 text-gray-600 cursor-pointer" />
                         <User className="h-5 w-5 text-gray-600 cursor-pointer" />
                         <div className="relative">
-                            <ShoppingCart className="h-5 w-5 text-gray-600 cursor-pointer" />
-                            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
+                            <ShoppingCart className="h-5 w-5 text-gray-600 cursor-pointer" onClick={() => router.push('/cart')} />
+                            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">{items.length}</span>
                         </div>
                     </div>
                 </div>
